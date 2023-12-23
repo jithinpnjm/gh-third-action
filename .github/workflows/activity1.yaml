@@ -1,0 +1,28 @@
+name: practice1
+on: push
+jobs:
+    activity1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout
+              uses: actions/checkout@v3
+            - name: install node
+              uses: actions/setup-node@v3 
+              with:
+                node-version: 18 
+            - name: dependencies
+              run: npm install
+            - name: lint
+              run: npm lint
+            - name: test
+              run: npm test
+    activity2:
+        runs-on: ubuntu-latest
+        needs: activity1
+        steps:
+            - name: build
+              run: echo "Building your app"
+
+          
+
+
