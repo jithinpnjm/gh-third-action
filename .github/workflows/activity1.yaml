@@ -13,7 +13,7 @@ jobs:
             - name: dependencies
               run: npm install
             - name: lint
-              run: npm lint
+              run: npm run lint
             - name: test
               run: npm test
     activity2:
